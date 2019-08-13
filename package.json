@@ -1,0 +1,19 @@
+{
+  "name": "zmhan",
+  "version": "1.0.0",
+  "description": "Modern webpack starter",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "webpack",
+    "js",
+    "web",
+    "frontend"
+  ],
+  "author": "Marat Zh",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
+  }
+}
