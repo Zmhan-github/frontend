@@ -2,6 +2,8 @@ import Search from "./models/Search";
 import * as searchView from "./views/searchView";
 import { elements } from "./views/base";
 
+import  '../sass/main.scss';
+
 /** Global state of the app
  * - Search object
  */
