@@ -1,5 +1,17 @@
-import string from './models/Search'
+// import "core-js/stable";
+import "regenerator-runtime/runtime";
 
-import { add, multiply, ID } from './views/searchView'
 
-console.log('Test test...', add(5, 6), multiply(ID, 2), ID, string)
+import axios from 'axios'
+
+
+
+const getRecipes = async (search_query) => {
+  const API_KEY = 'c692f77613b812fc1fe2c993a1cd1140'
+  const res = await axios.get(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${search_query}`)
+
+  console.log(res.data.recipes)
+}
+
+
+getRecipes('pizza')
