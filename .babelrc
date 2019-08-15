@@ -3,14 +3,8 @@
     [
       "@babel/env",
       {
-        "debug": true,
-      }
-    ]
-  ],
-  "plugins": [
-    [
-      "@babel/transform-runtime",
-      {
+        "debug": false,
+        "useBuiltIns": "usage",
         "corejs": 3
       }
     ]
