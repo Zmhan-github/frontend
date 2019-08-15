@@ -26,3 +26,6 @@ elements.searchForm.addEventListener("submit", e => {
   e.preventDefault();
   controlSearch();
 });
+
+console.log("sdd                                                                       ");
+[1, 2, 3].forEach(() => {});
