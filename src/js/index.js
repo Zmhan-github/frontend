@@ -2,7 +2,21 @@ import Search from "./models/Search";
 import * as searchView from "./views/searchView";
 import { elements } from "./views/base";
 
-import  '../sass/main.scss';
+import "../sass/main.scss";
+
+/**
+ * Chunks
+ */
+const tooltip = () => import(/* webpackChunkName: "popover" */ "bootstrap/js/src/tooltip");
+const toast = () => import(/* webpackChunkName: "popover" */ "bootstrap/js/src/toast");
+
+toast().then(() => {
+  $(".toast").toast("show");
+});
+
+tooltip().then(() => {
+  $('[data-toggle="tooltip"]').tooltip();
+});
 
 /** Global state of the app
  * - Search object
@@ -28,6 +42,3 @@ elements.searchForm.addEventListener("submit", e => {
   e.preventDefault();
   controlSearch();
 });
-
-console.log("sdd                                                                       ");
-[1, 2, 3].forEach(() => {});
