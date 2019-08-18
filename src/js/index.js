@@ -1,14 +1,14 @@
 import Search from "./models/Search";
 import * as searchView from "./views/searchView";
-import { elements } from "./views/base";
+import { elements, renderLoader, clearLoader } from "./views/base";
 
 import "../sass/main.scss";
 
 /**
  * Chunks
  */
-const tooltip = () => import(/* webpackChunkName: "popover" */ "bootstrap/js/src/tooltip");
-const toast = () => import(/* webpackChunkName: "popover" */ "bootstrap/js/src/toast");
+const tooltip = () => import(/* webpackChunkName: "tooltip" */ "bootstrap/js/src/tooltip");
+const toast = () => import(/* webpackChunkName: "toast" */ "bootstrap/js/src/toast");
 
 toast().then(() => {
   $(".toast").toast("show");
@@ -31,10 +31,18 @@ const controlSearch = async () => {
     // 2) New search object and add to state
     state.search = new Search(query);
     // 3) Prepare UI for results
+    searchView.clearInput();
+    searchView.clearResults();
+    renderLoader(elements.searchResWrapper);
     // 4) Search for recipes
     await state.search.getResilts();
     // 5) render result on UI
-    searchView.renderResults(state.search.result);
+    clearLoader();
+    if (state.search.result) {
+      searchView.renderResults(state.search.result);
+    } else {
+      searchView.renderErrors();
+    }
   }
 };
 

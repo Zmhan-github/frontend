@@ -10,16 +10,16 @@
   <body>
     <div class="jumbotron jumbotron-fluid bg-dark text-white">
       <div class="container">
-        <h1 class="display-4">Pizza fake</h1>
+        <h1 class="display-4">Fake recipes</h1>
         <form id="search-form" class="input-group mb-3 mt-10">
           <input
             type="text"
             id="search-input"
             class="form-control"
-            placeholder="Введите, pizza"
+            placeholder="Введите название рецепта, например pizza"
             data-toggle="tooltip"
             data-placement="left"
-            title="Выполнит поиск по запросу pizza"
+            title="Выполнит поиск только на английском"
           />
           <div class="input-group-append">
             <button class="btn btn-secondary" type="submit">Поиск</button>
@@ -27,20 +27,20 @@
         </form>
       </div>
     </div>
-    <div class="container">
-      <div id="results" class="card-columns">
-        <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
-          <div class="toast-header">
-            <strong class="mr-auto">Bootstrap</strong>
-            <small>11 mins ago</small>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="toast-body">
-            <img src="./assets/img/banner-shop.svg" class="rounded mr-2" alt="icon" />
-          </div>
-        </div>
+    <div id="results-wrapper" class="container">
+      <div id="results" class="card-columns"></div>
+    </div>
+
+    <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false" style="position: absolute; right: 20px; bottom: 10px;">
+      <div class="toast-header">
+        <strong class="mr-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        <img src="./assets/img/banner-shop.svg" class="rounded mr-2" alt="icon" />
       </div>
     </div>
 
